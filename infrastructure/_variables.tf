@@ -5,3 +5,10 @@ variable "config_context" {
 variable "kubernetes_namespace" {
   type = string
 }
+
+variable "argocd" {
+  type = object({
+    name = string
+    version = string
+  })
+}
