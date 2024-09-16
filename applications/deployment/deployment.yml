@@ -18,7 +18,7 @@ spec:
         app: web
     spec:
       containers:
-        - image: iesgn/test_web:latest
+        - image: iesgn/test_web:version1
           name: contenedor-nginx
           ports:
             - name: http
