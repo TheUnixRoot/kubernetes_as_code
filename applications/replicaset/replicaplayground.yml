@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: replica-test-web
 spec:
-  replicas: 3
+  replicas: 0
   selector:
     matchLabels:
       app: web-prueba
