@@ -5,7 +5,7 @@ metadata:
   labels:
     app: web
   annotations:
-    change-cause: "Updating version to latest"
+    "kubernetes.io/change-cause": "Updating version to latest"
 spec:
   revisionHistoryLimit: 3
   strategy:
