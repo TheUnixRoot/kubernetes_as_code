@@ -7,8 +7,4 @@ resource "helm_release" "argocd" {
   chart = var.argocd.name
   version = var.argocd.version
 
-  set {
-    name = "server.service.type"
-    value = "NodePort"
-  }
 }
