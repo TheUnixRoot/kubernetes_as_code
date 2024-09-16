@@ -11,9 +11,4 @@ spec:
     path: 'applications/pod'
     repoURL: 'https://github.com/TheUnixRoot/kubernetes_as_code.git'
     targetRevision: HEAD
-    directory:
-      jsonnet:
-        tlas:
-          - {}
-  sources: []
   project: default
