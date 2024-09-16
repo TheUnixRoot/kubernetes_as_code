@@ -17,3 +17,13 @@ PS> kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data
 $> echo "OUTPUT" | base64 -d
 ```
 You can use same line but I don't use kubectl over WSL so I have to copy-paste it.
+
+Using app of apps pattern:
+```commandline
+argocd app create main `
+    --dest-namespace context-test-1-ns `
+    --dest-server https://kubernetes.default.svc `
+    --repo https://github.com/TheUnixRoot/kubernetes_as_code.git `
+    --path argocd  
+argocd app sync main
+```
