@@ -27,3 +27,8 @@ argocd app create main `
     --path argocd  
 argocd app sync main
 ```
+
+### Deployment test
+```commandline
+ kubectl port-forward deployment.apps/deployment-testweb 8040:80 -n context-test-1-ns
+```
