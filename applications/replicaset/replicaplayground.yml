@@ -1,0 +1,17 @@
+apiVersion: app/v1
+kind: ReplicaSet
+metadata:
+  name: replica-test-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-prueba
+  template:
+    metadata:
+      labels:
+        app: web-prueba
+    spec:
+      containers:
+        - image: iesgn/test_web:latest
+          name: contenedor-test-web
