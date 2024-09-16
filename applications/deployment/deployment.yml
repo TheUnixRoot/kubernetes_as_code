@@ -4,6 +4,8 @@ metadata:
   name: deployment-testweb
   labels:
     app: web
+  annotations:
+    change-cause: "Updating version to latest"
 spec:
   revisionHistoryLimit: 3
   strategy:
@@ -18,7 +20,7 @@ spec:
         app: web
     spec:
       containers:
-        - image: iesgn/test_web:version1
+        - image: iesgn/test_web:latest
           name: contenedor-nginx
           ports:
             - name: http
