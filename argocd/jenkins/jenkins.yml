@@ -9,12 +9,16 @@ spec:
   destination:
     namespace: 'jenkins-ns'
     server: 'https://kubernetes.default.svc'
-  source:
-    chart: jenkins
-    repoURL: https://charts.jenkins.io
-    targetRevision: 5.6.1
-    helm:
-      releaseName: jenkins
-      valueFiles:
-        - ../../values/jenkins/sealed-secret-jenkins.yml
+  sources:
+    - chart: jenkins
+      repoURL: https://charts.jenkins.io
+      targetRevision: 5.6.1
+      helm:
+        releaseName: jenkins
+        valueFiles:
+          - $values/jenkins/sealed-secret-jenkins.yml
+    - repoURL: 'https://github.com/TheUnixRoot/kubernetes_as_code.git'
+      path: 'values'
+      targetRevision: HEAD
+      ref: values
   project: default
