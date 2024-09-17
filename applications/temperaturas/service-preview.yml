@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: temperaturas-frontend-preview
+  name: temperaturas-frontend-service-preview
 spec:
   type: NodePort
   ports:
