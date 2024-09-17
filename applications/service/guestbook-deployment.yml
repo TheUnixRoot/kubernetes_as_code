@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: guestbook-service
+  labels:
+    app: guestbook-service
+    tier: frontend
+spec:
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - pause: {duration: 10}
+  replicas: 3
+  selector:
+    matchLabels:
+      app: guestbook-service
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: guestbook-service
+        tier: frontend
+    spec:
+      containers:
+        - name: contenedor-guestbook
+          image: iesgn/guestbook
+          ports:
+            - name: http-server
+              containerPort: 5000
