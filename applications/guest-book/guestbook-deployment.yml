@@ -1,11 +1,16 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Rollout
 metadata:
   name: guestbook
   labels:
     app: guestbook
     tier: frontend
 spec:
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - pause: {duration: 10}
   replicas: 3
   selector:
     matchLabels:

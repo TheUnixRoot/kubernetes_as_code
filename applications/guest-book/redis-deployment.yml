@@ -1,11 +1,16 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Rollout
 metadata:
   name: redis
   labels:
     app: redis
     tier: backend
 spec:
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - pause: {duration: 10}
   replicas: 1
   selector:
     matchLabels:
