@@ -47,3 +47,9 @@ $> ./kubeseal --format yaml --cert ../../../c/Users/juanp/PycharmProjects/Teavar
 # Copy file content and press Ctrl+D to finish the stdin reading
 # Copy the ouput sealed secret to a file manually from console output
 ```
+
+## Preview environments to link PRs to namespaces managed by argocd
+TBD
+
+## Argo rollouts
+TBD
