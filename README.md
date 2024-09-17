@@ -37,3 +37,13 @@ argocd app sync main
 
 ### Useful links
 [Kubeseal and sealed-secrets](https://medium.com/@abdullah.devops.91/how-to-use-sealed-secrets-in-kubernetes-b6c69c84d1c2)
+
+For using kubeseal, I did in WSL but cluster is managed with kubectl in windows so some line endings issues are found, to manage it I have to copy-paste contents throw different terminals instead of using <> and pipes.
+
+```commandline
+PS> kubectl.exe -n jenkins-ns get secret jenkins -o yaml > ./jenkins-secret.yml
+$>./kubeseal --fetch-cert --controller-name sealed-secrets --controller-namespace sealed-secrets-ns > ./cert.crt
+$> ./kubeseal --format yaml --cert ../../../c/Users/juanp/PycharmProjects/TeavaroProject/cert.crt
+# Copy file content and press Ctrl+D to finish the stdin reading
+# Copy the ouput sealed secret to a file manually from console output
+```
