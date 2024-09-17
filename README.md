@@ -24,7 +24,8 @@ argocd app create main `
     --dest-namespace context-test-1-ns `
     --dest-server https://kubernetes.default.svc `
     --repo https://github.com/TheUnixRoot/kubernetes_as_code.git `
-    --path argocd  
+    --path argocd
+    --directory-recurse
 argocd app sync main
 ```
 
