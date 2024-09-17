@@ -11,6 +11,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: temperaturas-frontend-active
+                name: temperaturas-frontend-service-active
                 port:
                   number: 3000
