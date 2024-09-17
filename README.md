@@ -52,4 +52,5 @@ $> ./kubeseal --format yaml --cert ../../../c/Users/juanp/PycharmProjects/Teavar
 TBD
 
 ## Argo rollouts
-TBD
+https://argo-rollouts.readthedocs.io/en/stable/getting-started/
+
