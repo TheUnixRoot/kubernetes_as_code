@@ -11,15 +11,15 @@ spec:
     matchLabels:
       app: guestbook
       tier: frontend
-    template:
-      metadata:
-        labels:
-          app: guestbook
-          tier: frontend
-      spec:
-        containers:
-          - name: contenedor-guestbook
-            image: iesgn/guestbook
-            ports:
-              - name: http-server
-                containerPort: 5000
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        tier: frontend
+    spec:
+      containers:
+        - name: contenedor-guestbook
+          image: iesgn/guestbook
+          ports:
+            - name: http-server
+              containerPort: 5000
