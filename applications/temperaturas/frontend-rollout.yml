@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: temperaturas-frontend
+  labels:
+    app: temperaturas
+    tier: frontend
+spec:
+  strategy:
+    blueGreen:
+      activeService: temperaturas-frontend-service-active
+      previewService: temperaturas-frontend-service-preview
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temperaturas
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: temperaturas
+        tier: frontend
+    spec:
+      containers:
+        - name: contenedor-temperaturas
+          image: iesgn/temperaturas_frontend
+          ports:
+            - name: http-server
+              containerPort: 3000
