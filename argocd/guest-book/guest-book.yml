@@ -1,5 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: Rollout
 metadata:
   name: guestbook-rollout
   namespace: argocd
