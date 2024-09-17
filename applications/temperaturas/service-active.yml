@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: temperaturas-frontend-service-active
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - name: service-guestbook
       port: 3000
