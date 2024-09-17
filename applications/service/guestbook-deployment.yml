@@ -7,10 +7,9 @@ metadata:
     tier: frontend
 spec:
   strategy:
-    canary:
-      steps:
-      - setWeight: 50
-      - pause: {duration: 10}
+    blueGreen:
+      activeService: frontend-service-active
+      previewService: frontend-service-preview
   replicas: 3
   selector:
     matchLabels:
