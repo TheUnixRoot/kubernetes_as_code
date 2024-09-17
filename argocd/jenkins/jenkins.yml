@@ -6,6 +6,17 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Validate=false
 spec:
+  ignoreDifferences:
+    - group: ''
+      kind: 'Secret'
+      name: jenkins
+      jsonPointers:
+        - /data
+    - group: ''
+      kind: 'SealedSecret'
+      name: jenkins
+      jsonPointers:
+        - /data
   destination:
     namespace: 'jenkins-ns'
     server: 'https://kubernetes.default.svc'
