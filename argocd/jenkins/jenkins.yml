@@ -19,6 +19,6 @@ spec:
           - $values/jenkins/sealed-secret-jenkins.yml
     - repoURL: 'https://github.com/TheUnixRoot/kubernetes_as_code.git'
       path: 'values'
-      targetRevision: HEAD
+      targetRevision: main
       ref: values
   project: default
