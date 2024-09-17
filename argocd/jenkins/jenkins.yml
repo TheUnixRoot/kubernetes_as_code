@@ -13,4 +13,6 @@ spec:
     targetRevision: 5.6.1
     helm:
       releaseName: jenkins
+      valuesFiles:
+        - sealed-secret-jenkins.yml
   project: default

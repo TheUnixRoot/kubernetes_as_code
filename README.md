@@ -33,3 +33,7 @@ argocd app sync main
 ```commandline
  kubectl port-forward deployment.apps/deployment-testweb 8040:80 -n context-test-1-ns
 ```
+
+
+### Useful links
+[Kubeseal and sealed-secrets](https://medium.com/@abdullah.devops.91/how-to-use-sealed-secrets-in-kubernetes-b6c69c84d1c2)
