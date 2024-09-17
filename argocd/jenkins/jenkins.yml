@@ -15,6 +15,30 @@ spec:
     targetRevision: 5.6.1
     helm:
       releaseName: jenkins
-      valueFiles:
-        - sealed-secret-jenkins.yml
+      values: |-
+        extraDeploy:
+          - |
+            apiVersion: bitnami.com/v1alpha1
+            kind: SealedSecret
+            metadata:
+              creationTimestamp: null
+              name: jenkins
+              namespace: jenkins-ns
+            spec:
+              encryptedData:
+                jenkins-admin-password: AgBXtE+g/j8QGMEXTNh2FIyBpA7I3D5DlZY00hb5R33WVXeBqdfTkr0eNc/K/1kkdIRuidsxS2lEqcCYAKz1itXHwLNYu6FPVEvzFs+8k0xkBEIXx3/8WIRKo62esBuqGFEdtVCA87yrLt8rwSksuGB15UJCqJfDuEkELNby1DJHWEEc8yrXYQsAAJsU6P0jcOsWDULcl84vB4XGUYBQVKfH0ka8XR/Q5oRw9grixmYHhjK+RFjUaDPv/iGQn2EnEdOqmparQ1pUYNkiqmLomYlibEAcyX3PalElGfvMpYCCW5gC1kFZFcGAUvJCVx2XOJe1wTFDwIQBeZe2KgxFgYChnImJ1/P6fx7xzfca16ymW3PlRi8Ey8MA8Iv69Xg5ey+Oy6okUkK7+Gs1/NdszgRx7UY4MG/9hA5Ty2iT2eFPWTRKvQmn7C4Pj8EzLYOYJrG/4LbUQTJxH2MNd6+bDFj/P3ug6fuBMWr3MUkOG7P0FlNKPkE9XqCSojbwcGJR+a4YXB0YrJyfdUVAZsF/kE+ve1kp3C06xnsy+HzeyZJb5HMS4hAlaa1H9k3xJqzeu1HTWHhJrxIWyPuPgcLKuCH9s3132xVgxW4GvhokN2k4mqQLhPCu6uCvEYQ2ztGQBjBuf2jMTjVzFzHrFbk3xWUAoAIYyjQYG8xAlTJ4TKaXQLuxzJBZgjbX0GSeWqgwXuX49xldiUfzUlvYhQIuIcpaZuf35bps
+                jenkins-admin-user: AgCUNxb0guU9oNWAxosY2lJ8ftxuF545ijUXgLnnjSSVFBH5Oz28rAivuy6fy+QE/aFBzZ6rsnQCXNw8ro4EXAXmQLSA+bpmU7RCx0jyP90QOoMqKFi6ifPo8TRb8SbhXe8jwkZwoVivsHAd77sMOjSfhDuwbhx6EymIOJv9c7+6fABf/mymoSKenbuAVPqte41RFpObvOmMhKVKWIDuoDbhMcVz2Ms/GmWxHaq4MvjGF6pM3fXiMXj9k06XeJ6Tr+fJaszmnszm76Hyk6J65QAQBWT5yHvEX69paHxfOINaK7vC6VBVvXCRVadzOxMr9lQ2s2xaGhA7QaWwfbDBmFja0vXq2h5jcEpql1EPMlrDPKJMVjnxkyEHLHrr0lrj5Ry9nR/Y9IcR8lPJGCdO8uq44WcG2VuAleb3W2SSdJLUEsPae5Z2iXjXUPVolq6be0bfinJlluVxK+sRObSASc3TLFoDyBAessVFqjS0qI/mn/ZmOnWe+ihFNXYwbwqCamt7wP/iYiD2ifRMRln3WJpCZBAvh0kUdHRB41ObIzqeheItdpWhduXd8F9kTZOg+nFUxsGfsmpPgnOOMgsVN7XzDTlO6E/7Bg4wVkxbZKLSSaanhplKQTMS9eghVYal4LjiMeEPkTnZMHAjvCGB1fe4KjwygzCmWLZ745fU6DFe/GbbJpXUalgqvZ2GWmEoc4vbAIpgrA==
+              template:
+                metadata:
+                  creationTimestamp: null
+                  labels:
+                    app.kubernetes.io/component: jenkins-controller
+                    app.kubernetes.io/instance: jenkins
+                    app.kubernetes.io/managed-by: Helm
+                    app.kubernetes.io/name: jenkins
+                    argocd.argoproj.io/instance: jenkins
+                    helm.sh/chart: jenkins-5.6.1
+                  name: jenkins
+                  namespace: jenkins-ns
+                type: Opaque
   project: default
