@@ -7,8 +7,11 @@ Setups cluster, namespace and argocd and deploys prometheus + grafana over a sim
 kubectl proxy --port=8080
 ```
 Then apply terraform and it will create the context for test and download and install argocd within its own namespace.
+It will be executed as NodePort so you can access it directly via localhost:port
+
 ```commandline
-kubectl port-forward service/argocd-server 8090:80 -n argocd
+kubectl.exe -n argocd get service
+argocd-server     NodePort    10.108.88.74       80:30080/TCP,443:30443/TCP
 ```
 
 For getting default admin password:

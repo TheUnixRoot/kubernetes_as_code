@@ -1,9 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: redis
+  name: redis-disconnected
   labels:
-    app: redis
+    app: redis-disconnected
     tier: backend
 spec:
   strategy:
@@ -14,12 +14,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis
+      app: redis-disconnected
       tier: backend
   template:
     metadata:
       labels:
-        app: redis
+        app: redis-disconnected
         tier: backend
     spec:
       containers:

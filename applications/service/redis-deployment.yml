@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: redis-service
   labels:
-    app: redis-service
+    app: redis
     tier: backend
 spec:
   strategy:
@@ -14,12 +14,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis-service
+      app: redis
       tier: backend
   template:
     metadata:
       labels:
-        app: redis-service
+        app: redis
         tier: backend
     spec:
       containers:
