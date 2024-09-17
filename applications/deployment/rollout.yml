@@ -23,9 +23,10 @@ spec:
     metadata:
       labels:
         app: rollouts-deployment
-  containers:
-    - image: iesgn/test_web:latest
-      name: contenedor-nginx
-      ports:
-        - name: http
-          containerPort: 80
+    spec:
+      containers:
+        - image: iesgn/test_web:latest
+          name: contenedor-nginx
+          ports:
+            - name: http
+              containerPort: 80
