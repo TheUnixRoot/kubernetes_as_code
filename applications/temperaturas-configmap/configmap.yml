@@ -4,4 +4,4 @@ metadata:
   name: config-temperaturas
   namespace: context-test-1-ns
 data:
-  servidor_temperaturas: temperaturas-backend:5000
+  servidor_temperaturas: temperaturas-backend-custom-service-name:5000
