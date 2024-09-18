@@ -5,8 +5,9 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - name: service-guestbook
+    - name: temperaturas-service-preview-port
       port: 3000
       targetPort: http-server
   selector:
     app: temperaturas
+    tier: frontend
