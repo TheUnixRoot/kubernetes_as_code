@@ -31,5 +31,5 @@ spec:
             - name: TEMP_SERVER
               valueFrom:
                 configMapKeyRef:
-                  - name: config-temperaturas
-                    key: servidor_temperaturas
+                  name: config-temperaturas
+                  key: servidor_temperaturas
