@@ -40,11 +40,11 @@ spec:
                   key: bd_dbname
             - name: MYSQL_PASSWORD
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: bd-passwords
                   key: bd_password
-            - name: MYSQL_PASSWORD
+            - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: bd-passwords
                   key: bd_rootpassword
