@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-temperaturas
+  namespace: context-test-1-ns
+data:
+  servidor_temperaturas: temperaturas-backend:5000

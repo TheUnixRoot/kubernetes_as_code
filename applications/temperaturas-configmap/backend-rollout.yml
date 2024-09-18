@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: temperaturas-backend
+  labels:
+    app: temperaturas
+    tier: backend
+spec:
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - pause: {duration: 10}
+  replicas: 1
+  selector:
+    matchLabels:
+      app: temperaturas
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: temperaturas
+        tier: backend
+    spec:
+      containers:
+        - name: contenedor-servidor-temperaturas
+          image: iesgn/temperaturas_backend
+          ports:
+            - name: api-server
+              containerPort: 5000
