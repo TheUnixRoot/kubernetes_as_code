@@ -4,6 +4,17 @@ metadata:
   name: wordpress
   namespace: argocd
 spec:
+  ignoreDifferences:
+    - group: ''
+      kind: 'Secret'
+      name: bd-passwords
+      jsonPointers:
+        - /data
+    - group: ''
+      kind: 'SealedSecret'
+      name: bd-passwords
+      jsonPointers:
+        - /data
   destination:
     name: ''
     namespace: 'context-test-1-ns'
