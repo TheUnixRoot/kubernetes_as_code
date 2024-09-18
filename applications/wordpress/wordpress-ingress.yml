@@ -15,7 +15,7 @@ spec:
               service:
                 name: wordpress-service-active
                 port:
-                  number: 8
+                  number: 80
     - host: www.wordpress.org
       https:
         paths:
