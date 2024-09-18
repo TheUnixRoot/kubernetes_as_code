@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-service-active
+spec:
+  type: ClusterIP
+  ports:
+    - name: mariadb-service-active-port
+      port: 3306
+      targetPort: db-port
+  selector:
+    app: wordpress
+    type: database

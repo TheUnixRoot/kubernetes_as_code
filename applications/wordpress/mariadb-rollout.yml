@@ -1,0 +1,50 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: mariadb-deployment
+  labels:
+    app: wordpress
+    type: database
+spec:
+  strategy:
+    blueGreen:
+      activeService: mariadb-service-active
+      previewService: mariadb-service-preview
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+      type: database
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        type: database
+    spec:
+      containers:
+        - name: contenedor-mariadb
+          image: mariadb
+          ports:
+            - containerPort: 330
+              name: db-port
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: bd-datos
+                  key: bd_user
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: bd-datos
+                  key: bd_dbname
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: bd-passwords
+                  key: bd_password
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: bd-passwords
+                  key: bd_rootpassword
