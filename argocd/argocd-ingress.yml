@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     kubernetes.io/ingress.class: nginx # https://github.com/nginxinc/kubernetes-ingress/issues/1274
+    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   rules:
     - host: argocd.local
