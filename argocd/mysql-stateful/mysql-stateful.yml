@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysql-stateful
+spec:
+  destination:
+    name: ''
+    namespace: 'context-test-1-ns'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: 'applications/mysql-stateful'
+    repoURL: 'https://github.com/TheUnixRoot/kubernetes_as_code.git'
+    targetRevision: HEAD
+  project: default
