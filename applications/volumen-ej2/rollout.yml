@@ -8,6 +8,7 @@ spec:
   replicas: 1
   strategy:
     canary:
+      steps:
       - setWeight: 50
       - pause: {duration: 10}
   selector:
