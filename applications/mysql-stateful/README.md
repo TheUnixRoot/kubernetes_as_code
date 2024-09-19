@@ -1,1 +1,0 @@
-https://github.com/iesgn/curso_kubernetes_cep/blob/main/modulo9/ejemplo2.md
