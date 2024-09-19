@@ -1,5 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
-kind: rollout
+kind: Rollout
 metadata:
   name: nginx-ejemplo1
   labels:
