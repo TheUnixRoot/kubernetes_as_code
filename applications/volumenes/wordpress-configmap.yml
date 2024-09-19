@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bd-datos
+  namespace: context-test-1-ns
+data:
+  bd_user: user_wordpress
+  bd_dbname: wordpress
