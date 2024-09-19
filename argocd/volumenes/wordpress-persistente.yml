@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordpress-persistente
+  namespace: argocd
+spec:
+  ignoreDifferences:
+    - group: ''
+      kind: 'Secret'
+      name: bd-passwords
+      jsonPointers:
+        - /data
+    - group: ''
+      kind: 'SealedSecret'
+      name: bd-passwords
+      jsonPointers:
+        - /data
+  destination:
+    name: ''
+    namespace: 'context-test-1-ns'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: 'applications/volumenes'
+    repoURL: 'https://github.com/TheUnixRoot/kubernetes_as_code.git'
+    targetRevision: HEAD
+  project: default
