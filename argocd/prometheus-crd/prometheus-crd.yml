@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-stack
+  namespace: argocd
+spec:
+  destination:
+    namespace: 'context-test-1-ns'
+    server: 'https://kubernetes.default.svc'
+  sources:
+    - repoURL: https://github.com/prometheus-community/helm-charts.git
+      path: charts/kube-prometheus-stack/charts/crds
+      targetRevision: kube-prometheus-stack-62.7.0
+      directory:
+        recurse: true
+      syncOptions:
+        - Replace=true
+  project: default
